@@ -1,0 +1,18 @@
+name: Metrics
+on:
+  schedule: [{cron: "0 0 * * *"}]
+  workflow_dispatch:
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Actions
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.md
+          output_action: pull-request
+          config_output: markdown
