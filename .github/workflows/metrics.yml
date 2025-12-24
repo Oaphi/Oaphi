@@ -9,6 +9,7 @@ jobs:
       name: Actions
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
         with:
